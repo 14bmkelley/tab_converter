@@ -25,6 +25,8 @@ void writeNewTab(FILE **inputTab, FILE **outputTab, int shift) {
   long size;
   int c;
   size_t index = 0;
+  int whiteChars = 0;
+  int nonWhiteChars = 0;
 
   // Seek through the file and allocate line length to the size
   fseek(inputTab, 0, SEEK_END);
@@ -34,10 +36,30 @@ void writeNewTab(FILE **inputTab, FILE **outputTab, int shift) {
   if (size == 0) return;
   
   while ((c = fgetc(file)) != EOF) {
+    
+    switch (file[index++] = (char) c) {
+      
+      case '/t':
+      case ' ':
+        whiteChars++;
+        break;
 
-    index++;
-    if ((char) c == '\n') {
+      case '/n':
+      case '/r':
+        if (whiteChars > nonWhiteChars) {
+          // This line is chords
+        } else {
+          // This line is lyrics
+        }
+        whiteChars = 0;
+        nonWhiteChars = 0;
+        index = 0;
+        break;
 
+      default:
+        nonWhiteChars++;
+
+    }
   }
   
 }
