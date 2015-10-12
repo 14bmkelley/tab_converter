@@ -10,5 +10,5 @@ gcc *.c
 ```
 To run:
 ```
-./a.out [-keyUp <number of half steps> -keyDown <number of half steps>]
+./a.out [-keyUp <number of half steps> -keyDown <number of half steps> -o <name of output file>]
 ```
