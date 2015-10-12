@@ -21,8 +21,8 @@ void tryOpen(FILE **file, char *filename, char *mode) {
 
 void writeNewTab(FILE **inputTab, FILE **outputTab, int shift) {
   
-  char *sharps[12] = { "C ", "C#", "D ", "D#", "E ", "F ", "F#", "G ", "G#", "A ", "A#", "B " };
-  char *flats[12] = { "C ", "Db", "D ", "Eb", "E ", "F ", "Gb", "G ", "Ab", "A ", "Bb", "B " };
+  char *sharps[12] = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" };
+  char *flats[12] = { "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B" };
   int *file;
   long size;
   int c;
